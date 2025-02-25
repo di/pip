@@ -53,7 +53,7 @@ class Tests_UserSite:
             "('initools').project_name)",
         )
         project_name = result.stdout.strip()
-        assert "INITools" == project_name, project_name
+        assert "initools" == project_name, project_name
 
     @pytest.mark.xfail
     @pytest.mark.network

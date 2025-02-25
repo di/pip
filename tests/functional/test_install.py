@@ -1798,7 +1798,7 @@ def test_install_builds_wheels(script: PipTestEnvironment, data: TestData) -> No
     # into the cache
     assert wheels != [], str(res)
     assert wheels == [
-        f"Upper-2.0-py{sys.version_info[0]}-none-any.whl",
+        f"upper-2.0-py{sys.version_info[0]}-none-any.whl",
     ]
 
 
