@@ -291,7 +291,7 @@ def test_pip_second_command_line_interface_works(
     args.extend(["install", "INITools==0.2"])
     args.extend(["-f", os.fspath(data.packages)])
     result = script.run(*args)
-    dist_info_folder = script.site_packages / "INITools-0.2.dist-info"
+    dist_info_folder = script.site_packages / "initools-0.2.dist-info"
     initools_folder = script.site_packages / "initools"
     result.did_create(dist_info_folder)
     result.did_create(initools_folder)
@@ -363,7 +363,7 @@ def test_basic_install_from_pypi(script: PipTestEnvironment) -> None:
     Test installing a package from PyPI.
     """
     result = script.pip("install", "INITools==0.2")
-    dist_info_folder = script.site_packages / "INITools-0.2.dist-info"
+    dist_info_folder = script.site_packages / "initools-0.2.dist-info"
     initools_folder = script.site_packages / "initools"
     result.did_create(dist_info_folder)
     result.did_create(initools_folder)
