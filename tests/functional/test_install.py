@@ -1550,9 +1550,9 @@ def test_url_req_case_mismatch_no_index(
     )
 
     # only Upper-1.0.tar.gz should get installed.
-    dist_info_folder = script.site_packages / "Upper-1.0.dist-info"
+    dist_info_folder = script.site_packages / "upper-1.0.dist-info"
     result.did_create(dist_info_folder)
-    dist_info_folder = script.site_packages / "Upper-2.0.dist-info"
+    dist_info_folder = script.site_packages / "upper-2.0.dist-info"
     result.did_not_create(dist_info_folder)
 
 
@@ -1578,10 +1578,10 @@ def test_url_req_case_mismatch_file_index(
         "install", "--index-url", data.find_links3, Dinner, "requiredinner"
     )
 
-    # only Upper-1.0.tar.gz should get installed.
-    dist_info_folder = script.site_packages / "Dinner-1.0.dist-info"
+    # only Dinner-1.0.tar.gz should get installed.
+    dist_info_folder = script.site_packages / "dinner-1.0.dist-info"
     result.did_create(dist_info_folder)
-    dist_info_folder = script.site_packages / "Dinner-2.0.dist-info"
+    dist_info_folder = script.site_packages / "dinner-2.0.dist-info"
     result.did_not_create(dist_info_folder)
 
 
@@ -1602,9 +1602,9 @@ def test_url_incorrect_case_no_index(
     )
 
     # only Upper-2.0.tar.gz should get installed.
-    dist_info_folder = script.site_packages / "Upper-1.0.dist-info"
+    dist_info_folder = script.site_packages / "upper-1.0.dist-info"
     result.did_not_create(dist_info_folder)
-    dist_info_folder = script.site_packages / "Upper-2.0.dist-info"
+    dist_info_folder = script.site_packages / "upper-2.0.dist-info"
     result.did_create(dist_info_folder)
 
 
@@ -1624,10 +1624,10 @@ def test_url_incorrect_case_file_index(
         expect_stderr=True,
     )
 
-    # only Upper-2.0.tar.gz should get installed.
-    dist_info_folder = script.site_packages / "Dinner-1.0.dist-info"
+    # only Dinner-2.0.tar.gz should get installed.
+    dist_info_folder = script.site_packages / "dinner-1.0.dist-info"
     result.did_not_create(dist_info_folder)
-    dist_info_folder = script.site_packages / "Dinner-2.0.dist-info"
+    dist_info_folder = script.site_packages / "dinner-2.0.dist-info"
     result.did_create(dist_info_folder)
 
     # Should show index-url location in output
