@@ -555,7 +555,7 @@ def test_basic_install_from_local_directory(
     args.append(os.fspath(to_install))
     result = script.pip(*args)
     fspkg_folder = script.site_packages / "fspkg"
-    dist_info_folder = script.site_packages / "FSPkg-0.1.dev0.dist-info"
+    dist_info_folder = script.site_packages / "fspkg-0.1.dev0.dist-info"
     result.did_create(fspkg_folder)
     result.did_create(dist_info_folder)
 
@@ -577,7 +577,7 @@ def test_basic_install_relative_directory(
     """
     Test installing a requirement using a relative path.
     """
-    dist_info_folder = script.site_packages / "FSPkg-0.1.dev0.dist-info"
+    dist_info_folder = script.site_packages / "fspkg-0.1.dev0.dist-info"
     egg_link_file = script.site_packages / "FSPkg.egg-link"
     package_folder = script.site_packages / "fspkg"
 
@@ -871,7 +871,7 @@ def test_install_from_local_directory_with_in_tree_build(
     assert not in_tree_build_dir.exists()
     result = script.pip("install", to_install)
     fspkg_folder = script.site_packages / "fspkg"
-    dist_info_folder = script.site_packages / "FSPkg-0.1.dev0.dist-info"
+    dist_info_folder = script.site_packages / "fspkg-0.1.dev0.dist-info"
     result.did_create(fspkg_folder)
     result.did_create(dist_info_folder)
     assert in_tree_build_dir.exists()
@@ -1025,7 +1025,7 @@ def test_install_curdir(script: PipTestEnvironment, data: TestData) -> None:
         rmtree(egg_info)
     result = script.pip("install", curdir, cwd=run_from)
     fspkg_folder = script.site_packages / "fspkg"
-    dist_info_folder = script.site_packages / "FSPkg-0.1.dev0.dist-info"
+    dist_info_folder = script.site_packages / "fspkg-0.1.dev0.dist-info"
     result.did_create(fspkg_folder)
     result.did_create(dist_info_folder)
 
@@ -1037,7 +1037,7 @@ def test_install_pardir(script: PipTestEnvironment, data: TestData) -> None:
     run_from = data.packages.joinpath("FSPkg", "fspkg")
     result = script.pip("install", pardir, cwd=run_from)
     fspkg_folder = script.site_packages / "fspkg"
-    dist_info_folder = script.site_packages / "FSPkg-0.1.dev0.dist-info"
+    dist_info_folder = script.site_packages / "fspkg-0.1.dev0.dist-info"
     result.did_create(fspkg_folder)
     result.did_create(dist_info_folder)
 
